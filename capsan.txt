@@ -1,0 +1,15 @@
+From: https://github.com/jsiwek/capsan.git capsan
+
+for Debian based systems: apt-get install cmake libpcap-dev libssl-dev
+
+ git clone https://github.com/jsiwek/capsan.git capsan
+ mkdir capsan-build
+ cd capsan-build
+ cmake ../capsan
+ make
+
+command: ./capsan -r in.pcap -w out.pcap -k my_capsan_key --no-ports       (inside capsan-build)
+Anonymizes IPs, erases link-layer information
+ 
+my_capsan_key is random and used to anonymize pcap
+

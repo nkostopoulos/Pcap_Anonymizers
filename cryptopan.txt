@@ -1,0 +1,16 @@
+Crypto-PAn homepage --> https://www.cc.gatech.edu/computing/Telecomm/projects/cryptopan/
+
+wget http://www.cc.gatech.edu/computing/Networking/projects/cryptopan/Crypto-PAn.1.0.tar.gz
+tar -xvzf Crypto-PAn.1.0.tar.gz
+cd Crypto-PAn.1.0/
+make all
+
+Captured pcap is: in.pcap (filter dst port 53 for DNS)
+
+tshark -r in.pcap -T fields -e frame.time_relative -e frame.len -e ip.src > in.dat
+
+Anonymize:
+
+./sample in.dat >> out.dat
+
+out.dat contains timestamp (relative), frame len and anonymized destination ip 
